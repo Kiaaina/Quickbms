@@ -12,10 +12,10 @@ mode 100,20
 set "quick=%UserProfile%\OneDrive\Documents\quickbms\quickbms_4gb_files.exe"
 set "DIR=C:\Users\kiaai\OneDrive\Documents\quickbms\
 
-cecho {04}Choose {03}1=Compile {06}2=Unzip{07}
+cecho {04}Choose {03}1=Zip {07}or {06}2=Unzip{07}
 set /p a=;
 if %a%==1 goto zip
-if %a%==2 goto unzip
+if %a%==2 goto 
 goto top
 
 :zip
