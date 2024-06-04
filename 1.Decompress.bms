@@ -30,10 +30,10 @@ for i = 0 < NAMESZ
     math KEY4 += TMP
 next i
 
-math KEY1 &= 0xFF
-math KEY2 &= 0xFF
-math KEY3 &= 0xFF
-math KEY4 &= 0xFF
+math KEY1 &= 0x0A
+math KEY2 &= 0x0A
+math KEY3 &= 0x0A
+math KEY4 &= 0x0A
 
 string TMP  p= "%d-%d-%d-%d" KEY1 KEY2 KEY3 KEY4 
 string KEY  p= "%s" TMP 

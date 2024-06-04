@@ -54,14 +54,14 @@ for i = 0 < NAMESZ
     math KEY8 += TMP
 next i
 
-math KEY1 &= 0xFF
-math KEY2 &= 0xFF
-math KEY3 &= 0xFF
-math KEY4 &= 0xFF
-math KEY5 &= 0xFF
-math KEY6 &= 0xFF
-math KEY7 &= 0xFF
-math KEY8 &= 0xFF
+math KEY1 &= 0x0A
+math KEY2 &= 0x0A
+math KEY3 &= 0x0A
+math KEY4 &= 0x0A
+math KEY5 &= 0x0A
+math KEY6 &= 0x0A
+math KEY7 &= 0x0A
+math KEY8 &= 0x0A
 
 string TMP  p= "%d-%d-%d-%d-%d-%d-%d-%d" KEY1 KEY2 KEY3 KEY4 KEY5 KEY6 KEY7 KEY8 
 string KEY  p= "%s" TMP 
@@ -79,7 +79,7 @@ string ACD_NAME += ".rebuilt"
 
 log MEMORY_FILE2 0 0
 if ACD_VERSION == 1
-    put 0xfffffba9 long MEMORY_FILE2
+    put 0x0Afffba9 long MEMORY_FILE2
     put 0x000a4691 long MEMORY_FILE2
 endif
 for
@@ -89,6 +89,8 @@ for
     endif
     string NAME <<= 2   # remove .\
     print "INPUT FILE: %NAME% %SIZE|x%"
+    
+    open "." NAME
 
     strlen NAMESZ NAME
     put NAMESZ long MEMORY_FILE2

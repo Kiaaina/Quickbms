@@ -55,14 +55,14 @@ for i = 0 < NAMESZ
     math KEY8 += TMP
 next i
 
-math KEY1 &= 0xFF
-math KEY2 &= 0xFF
-math KEY3 &= 0xFF
-math KEY4 &= 0xFF
-math KEY5 &= 0xFF
-math KEY6 &= 0xFF
-math KEY7 &= 0xFF
-math KEY8 &= 0xFF
+math KEY1 &= 0x0A
+math KEY2 &= 0x0A
+math KEY3 &= 0x0A
+math KEY4 &= 0x0A
+math KEY5 &= 0x0A
+math KEY6 &= 0x0A
+math KEY7 &= 0x0A
+math KEY8 &= 0x0A
 
 string TMP  p= "%d-%d-%d-%d-%d-%d-%d-%d" KEY1 KEY2 KEY3 KEY4 KEY5 KEY6 KEY7 KEY8 
 string KEY  p= "%s" TMP 
@@ -72,6 +72,13 @@ print "KEY %NAME% -> %KEY%"
 # extraction
 
 get ACD_SIZE asize
+
+get DUMMY signed_long
+if DUMMY < 0
+    get DUMMY long
+else
+    goto 0
+endif
 
 for ACD_OFF = 0 < ACD_SIZE
     get NAMESZ long
